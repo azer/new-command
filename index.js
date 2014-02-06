@@ -7,12 +7,17 @@ function command (options) {
   var result = argv;
 
   var key;
-  for (key in argv) {
-    if (key == '_') continue;
-    if (!options[key]) continue;
 
-    result[options[key]] = argv[key];
+  if (options) {
+    for (key in argv) {
+      if (key == '_') continue;
+      if (!options[key]) continue;
+
+      result[options[key]] = argv[key];
+    }
   }
+
+  options || (options = {});
 
   if ((argv.version && !options.version) || (argv.v && !options.v)) {
     require('show-version')('../../');
