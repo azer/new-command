@@ -1,0 +1,24 @@
+{
+  "name": "new-command",
+  "version": "0.0.0",
+  "description": "Simplifying defining commands and options by combining minimist, show-help, show-version modules",
+  "main": "index.js",
+  "keywords": [
+    "cli",
+    "command",
+    "argument",
+    "version",
+    "help"
+  ],
+  "repository": {
+    "url": "git@github.com:azer/new-command.git",
+    "type": "git"
+  },
+  "author": "Azer Koçulu <azer@kodfabrik.com>",
+  "license": "BSD",
+  "dependencies": {
+    "show-help": "1.x",
+    "show-version": "1.x",
+    "minimist": "0.0.x"
+  }
+}
