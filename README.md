@@ -1,6 +1,6 @@
 ## new-command
 
-Simplifies defining commands by combining [minimist](), [show-help](), [show-version]() modules.
+Simplifies defining commands by combining [minimist](http://github.com/substack/minimist), [show-help](http://github.com/azer/show-help), [show-version](http://github.com/azer/show-version) modules.
 
 ## Install
 
