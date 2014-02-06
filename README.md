@@ -1,6 +1,6 @@
 ## new-command
 
-Simplifies defining commands by combining [minimist](http://github.com/substack/minimist), [show-help](http://github.com/azer/show-help), [show-version](http://github.com/azer/show-version) modules.
+Simplifies creating command-line programs by combining [minimist](http://github.com/substack/minimist), [show-help](http://github.com/azer/show-help), [show-version](http://github.com/azer/show-version) modules.
 
 Usage Examples: [prova](https://github.com/azer/prova/blob/master/bin/prova#L3), [bud](https://github.com/azer/bud/blob/master/lib/cli.js#L9), [personal-api](https://github.com/azer/personal-api/blob/master/bin/personal-api.js#L3), [ourtunes](https://github.com/azer/ourtunes/blob/master/bin/ourtunes.js#L5)
 
