@@ -3,10 +3,19 @@ var argv = minimist(process.argv.slice(process.argv[0] == 'node' ? 2 : 1));
 
 module.exports = command;
 
-function command (options) {
+function command () {
   var result = argv;
-
   var key;
+  var options;
+  var subcommands;
+
+  if (typeof arguments[arguments.length - 1] == 'object') {
+    options = arguments[arguments.length - 1];
+  }
+
+  if (arguments.length > 1 || typeof arguments[0] == 'string') {
+    subcommands = Array.prototype.slice.call(arguments, 0, arguments.length - (options ? 1 : 0));
+  }
 
   if (options) {
     for (key in argv) {
@@ -15,6 +24,12 @@ function command (options) {
 
       result[options[key]] = argv[key];
     }
+  }
+
+  if (subcommands && subcommands.indexOf(argv._[0]) > -1) {
+    result[argv._[0]] = true;
+    argv._ = argv._.slice(1);
+    return result;
   }
 
   options || (options = {});
@@ -27,5 +42,5 @@ function command (options) {
     require('show-help')('../../');
   }
 
-  return argv;
+  return result;
 }

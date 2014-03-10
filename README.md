@@ -12,17 +12,38 @@ $ npm install new-command
 
 ## Usage
 
+### Defining Parameters
+
 Define a command and options by calling new-command:
 
 ```js
-command = require('new-command')({ p: 'port', n: 'hostname' })
-http = require('http')
+command = require('new-command')({ 'p': 'port', 'n': 'hostname' })
 
-http.createServer(function (req, res) {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('Hello World\n');
-}).listen(command.port || 1337, command.hostname || 'localhost');
+command.port
+// => 8080
+
+command.hostname
+// => foobar.com
 ```
+
+## Subcommands
+
+To define subcommands like `git push` `npm publish` etc, just pass subcommand names before options:
+
+```js
+command = require('new-command')('install', 'publish', 'unpublish', { r: 'registry', s: 'save' })
+
+command.install
+// => undefined
+
+command.publish
+// => true
+
+command.registry
+// => 'localhost:3000'
+```
+
+### --version and --help
 
 `new-command` will take care of `--version` (-v) and `--help` (-h) options
 for you, by calling [show-version](http://github.com/azer/show-version) and [show-help](http://github.com/azer/show-help). So, if you call this command with -v parameter:
@@ -31,7 +52,6 @@ for you, by calling [show-version](http://github.com/azer/show-version) and [sho
 $ start-server --version
 
 start-server v0.0.0
-
 ```
 
 It reads your package name and version and outputs automatically. When user calls -h parameter:
