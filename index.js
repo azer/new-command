@@ -2,6 +2,8 @@ var minimist = require("minimist");
 var argv = minimist(process.argv.slice(process.argv[0] == 'node' ? 2 : 1));
 
 module.exports = command;
+module.exports.version = version;
+module.exports.help = help;
 
 function command () {
   var result = argv;
@@ -35,7 +37,7 @@ function command () {
   options || (options = {});
 
   if ((argv.version && !options.version) || (argv.v && !options.v)) {
-    require('show-version')('../../');
+    version();
   }
 
   if ((argv.help && !options.help) || (argv.h && !options.h)) {
@@ -43,4 +45,12 @@ function command () {
   }
 
   return result;
+}
+
+function version () {
+  require('show-version')('../../');
+}
+
+function help () {
+  require('show-help')('../../');
 }
