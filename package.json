@@ -1,6 +1,6 @@
 {
   "name": "new-command",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simplifying defining commands and options by combining minimist, show-help, show-version modules",
   "main": "index.js",
   "keywords": [
