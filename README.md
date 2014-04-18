@@ -24,6 +24,9 @@ command.port
 
 command.hostname
 // => foobar.com
+
+command._
+// => ['rest', 'of the', 'arguments']
 ```
 
 ## Subcommands
