@@ -41,7 +41,7 @@ function command () {
   }
 
   if ((argv.help && !options.help) || (argv.h && !options.h)) {
-    require('show-help')('../../');
+    require('show-help')(module.parent.filename);
   }
 
   return result;
