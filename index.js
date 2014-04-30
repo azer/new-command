@@ -52,5 +52,5 @@ function version () {
 }
 
 function help () {
-  require('show-help')('../../');
+  require('show-help')(module.parent.filename);
 }
