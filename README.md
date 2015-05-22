@@ -17,7 +17,7 @@ $ npm install new-command
 Define a command and options by calling new-command:
 
 ```js
-command = require('new-command')({ 'p': 'port', 'n': 'hostname' })
+var command = require('new-command')({ 'p': 'port', 'n': 'hostname' })
 
 command.port
 // => 8080
