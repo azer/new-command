@@ -1,5 +1,5 @@
 var minimist = require("minimist");
-var argv = minimist(process.argv.slice(process.argv[0] == 'node' ? 2 : 1));
+var argv = minimist(process.argv.slice(2));
 
 module.exports = command;
 module.exports.version = version;

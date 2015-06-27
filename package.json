@@ -19,6 +19,6 @@
   "dependencies": {
     "show-help": "2.x",
     "show-version": "1.x",
-    "minimist": "0.0.x"
+    "minimist": "^1.0.0"
   }
 }
