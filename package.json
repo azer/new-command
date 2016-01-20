@@ -3,6 +3,9 @@
   "version": "1.0.1",
   "description": "Simplifying defining commands and options by combining minimist, show-help, show-version modules",
   "main": "index.js",
+  "bin": {
+    "new-command": "./example"
+  },
   "keywords": [
     "cli",
     "command",

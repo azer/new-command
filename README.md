@@ -36,14 +36,16 @@ To define subcommands like `git push` `npm publish` etc, just pass subcommand na
 ```js
 command = require('new-command')('install', 'publish', 'unpublish', { r: 'registry', s: 'save' })
 
+
+
 command.install
 // => undefined
 
 command.publish
 // => true
 
-command.registry
-// => 'localhost:3000'
+command._subcommand
+// => 'publish'
 ```
 
 ### --version and --help

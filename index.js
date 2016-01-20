@@ -28,9 +28,10 @@ function command () {
     }
   }
 
-  if (subcommands && subcommands.indexOf(argv._[0]) > -1) {
-    result[argv._[0]] = true;
-    argv._ = argv._.slice(1);
+  if (subcommands && subcommands.indexOf(argv._[1]) > -1) {
+    result[argv._[1]] = true;
+    result['_subcommand'] = argv._[1];
+    argv._ = argv._.slice(2);
     return result;
   }
 
